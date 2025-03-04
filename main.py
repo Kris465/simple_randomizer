@@ -5,6 +5,7 @@ import os
 import random
 from aiogram import Bot, Dispatcher, types
 from aiogram.filters import Command
+from aiogram.methods import DeleteWebhook
 from dotenv import load_dotenv, find_dotenv
 
 load_dotenv(find_dotenv())
@@ -56,6 +57,7 @@ async def handle_unknown_command(message: types.Message):
 
 async def main():
     logging.info("Запуск бота")
+    await bot(DeleteWebhook(drop_pending_updates=True))
     await dp.start_polling(bot)
 
 if __name__ == "__main__":

@@ -1,0 +1,12 @@
+[Unit]
+Description=simple_randomizer
+
+[Service]
+ExecStart=/usr/bin/python3 /home/chris/bots/simple_randomizer/main.py
+WorkingDirectory=/home/chris/bots/simple_randomizer/
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
