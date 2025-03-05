@@ -29,7 +29,7 @@ def get_test_files():
 
 @dp.message(Command("start"))
 async def cmd_start(message: types.Message):
-    await message.answer("Привет! Я бот для тестирования. Используй /topics, чтобы увидеть доступные темы.")
+    await message.answer("Привет! Я бот, который расскажет какие вопросы будут на тестировании. Используй /topics, чтобы увидеть список тем и подготовится. Удачи ;)")
 
 
 @dp.message(Command("topics"))
@@ -52,7 +52,7 @@ async def send_random_question(message: types.Message):
 
 @dp.message()
 async def handle_unknown_command(message: types.Message):
-    pass
+    await message.answer("Выберите тему, и я задам случайный вопрос по ней.")
 
 
 async def main():
